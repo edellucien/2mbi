@@ -5,10 +5,11 @@
   "description": "2mbi website",
   "main": "index.js",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "^9.2.2",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "node-sass": "^4.13.1"
+    "react-dom": "^16.13.0"
   },
   "scripts": {
     "dev": "next",
