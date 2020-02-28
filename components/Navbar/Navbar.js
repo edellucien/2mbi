@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import css from './Navbar.scss';
 
@@ -8,10 +9,14 @@ const Navbar = () => (
       <div>
         <ul className="test">
           <li>
-            <Link href="/"><a>Home</a></Link>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </li>
           <li>
-            <Link href="/about"><a>About</a></Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
         </ul>
       </div>
