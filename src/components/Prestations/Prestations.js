@@ -19,18 +19,23 @@ const Prestations = () => {
     <div>
       {prestationRows.map(content => {
         return (
-          <Box m={5}>
+          <Box
+            m={5}
+            style={{
+              margin: isVerySmall ? '0 40px' : '40px',
+            }}
+          >
             <Grid
               container
               xs={12}
-              spacing={isVerySmall ? 0 : 3}
+              spacing={isVerySmall ? 0 : 4}
               className={classes.root}
             >
               {content.map(card => (
                 <Grid
                   item
                   xs={12}
-                  sm={card.width || 4}
+                  sm={4}
                   style={{ marginBottom: isVerySmall ? '20px' : 0 }}
                   key={card.title}
                 >

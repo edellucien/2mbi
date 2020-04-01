@@ -11,7 +11,6 @@ const config = [
     {
       title: 'Ventilation',
       imageUrl: '/../../static/motor.jpg',
-      // width: 12,
     },
   ],
   [
@@ -21,7 +20,7 @@ const config = [
     },
     {
       title: 'Electricités/automatismes',
-      imageUrl: '/../../static/motor.jpg',
+      imageUrl: '/../../static/elec.jpg',
     },
     {
       title: 'Variateurs',

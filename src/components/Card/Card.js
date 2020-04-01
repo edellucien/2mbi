@@ -24,6 +24,7 @@ const useStyles = makeStyles(() => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    transition: 'box-shadow 0.5s ease',
   },
   media: {
     height: 5,
@@ -43,7 +44,15 @@ function DocCard({ title, imageUrl, fullWidth }) {
       className={classes.card}
       style={{
         cursor: 'pointer',
-        backgroundColor: isHovered ? 'rgba(0, 0, 0, 0.08)' : '',
+        // box-shadow: 10px 10px 19px -13px rgba(0,0,0,0.3);
+        boxShadow: isHovered
+          ? `
+          0px 2px 1px -1px rgba(0,0,0,0.2),
+          0px 1px 1px 0px rgba(0,0,0,0.14),
+          0px 1px 3px 0px rgba(0,0,0,0.12),
+          10px 10px 19px -13px rgba(0,0,0,0.5)
+          `
+          : '',
       }}
     >
       <div
@@ -55,22 +64,6 @@ function DocCard({ title, imageUrl, fullWidth }) {
           image={imageUrl}
           title={title}
         />
-
-        {isHovered ? (
-          <div
-            style={{
-              position: 'absolute',
-              top: '0',
-              left: '0',
-              color: 'white',
-              paddingTop: '20px',
-              backgroundColor: 'rgb(220,220,220,0)',
-            }}
-          >
-            Test
-          </div>
-        ) : null}
-
         <CardContent>
           <Typography variant="body2" color="textPrimary" component="p">
             {title}
