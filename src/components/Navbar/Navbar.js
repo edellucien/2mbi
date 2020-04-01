@@ -30,7 +30,7 @@ const Navbar = ({ isVerySmall }) => (
           </Link>
         </li>
         <li>
-          <Link href="/about">
+          <Link href="/information">
             <a>Informations</a>
           </Link>
         </li>

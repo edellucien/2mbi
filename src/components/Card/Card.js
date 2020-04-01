@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Router from 'next/router';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 const propTypes = {
+  url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   fullWidth: PropTypes.bool,
@@ -35,7 +37,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function DocCard({ title, imageUrl, fullWidth }) {
+function DocCard({ url, title, imageUrl, fullWidth }) {
   const [isHovered, setIsHovered] = useState(false);
   const classes = useStyles();
 
@@ -44,7 +46,6 @@ function DocCard({ title, imageUrl, fullWidth }) {
       className={classes.card}
       style={{
         cursor: 'pointer',
-        // box-shadow: 10px 10px 19px -13px rgba(0,0,0,0.3);
         boxShadow: isHovered
           ? `
           0px 2px 1px -1px rgba(0,0,0,0.2),
@@ -61,6 +62,9 @@ function DocCard({ title, imageUrl, fullWidth }) {
       >
         <CardMedia
           className={fullWidth ? classes.fullWidthMedia : classes.media}
+          onClick={() => {
+            Router.push(`/${url}`);
+          }}
           image={imageUrl}
           title={title}
         />

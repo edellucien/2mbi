@@ -40,6 +40,7 @@ const Prestations = () => {
                   key={card.title}
                 >
                   <Card
+                    url={card.url}
                     title={card.title}
                     imageUrl={card.imageUrl}
                     content={card.description}
