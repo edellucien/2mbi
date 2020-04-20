@@ -1,18 +1,14 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Card from '../Card';
 import theme from '../../themes/2mbi-theme';
 import prestationRows from '../../content/presations';
 
-const useStyles = makeStyles(() => ({
-  root: { flexGrow: 1 },
-}));
+import { root } from './Prestations.scss';
 
 const Prestations = () => {
-  const classes = useStyles();
   const isVerySmall = useMediaQuery(theme.breakpoints.down('xs'));
 
   return (
@@ -21,16 +17,12 @@ const Prestations = () => {
         return (
           <Box
             m={5}
+            key={content.title}
             style={{
               margin: isVerySmall ? '0 40px' : '40px',
             }}
           >
-            <Grid
-              container
-              xs={12}
-              spacing={isVerySmall ? 0 : 4}
-              className={classes.root}
-            >
+            <Grid container spacing={isVerySmall ? 0 : 4} className={root}>
               {content.map(card => (
                 <Grid
                   item

@@ -6,7 +6,11 @@ import Prestations from '../src/components/Prestations';
 import { offers } from './index.scss';
 
 const presentation = (
-  <div>
+  <div
+    style={{
+      paddingTop: '10px',
+    }}
+  >
     <h2>2MBi, un savoir-faire à votre service</h2>
 
     <p>
@@ -48,13 +52,13 @@ const presentation = (
 
 const Index = () => (
   <Layout>
-    {presentation}
-    <div className={offers}>
-      <b>Nos prestations</b>
-      <Container maxWidth="lg">
+    <Container maxWidth="lg">
+      {presentation}
+      <div className={offers}>
+        <b>Nos prestations</b>
         <Prestations />
-      </Container>
-    </div>
+      </div>
+    </Container>
   </Layout>
 );
 

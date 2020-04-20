@@ -3,29 +3,29 @@ export default [
     {
       url: 'moteurs',
       title: 'Moteurs',
-      imageUrl: '/../../static/motor.jpg',
+      imageUrl: '/../../static/images/motor.jpg',
     },
     {
       url: 'reducteurs',
       title: 'Moto-réducteurs/réducteurs',
-      imageUrl: '/../../static/motor.jpg',
+      imageUrl: '/../../static/images/reductor.jpg',
     },
     {
       url: 'ventilation',
       title: 'Ventilation',
-      imageUrl: '/../../static/motor.jpg',
+      imageUrl: '/../../static/images/vent2.jpg',
     },
   ],
   [
     {
       url: 'pompes',
       title: 'Pompes',
-      imageUrl: '/../../static/motor.jpg',
+      imageUrl: '/../../static/images/pump.jpg',
     },
     {
-      url: 'electricité',
+      url: 'electricite',
       title: 'Electricités/automatismes/variateurs',
-      imageUrl: '/../../static/elec.jpg',
+      imageUrl: '/../../static/images/elec.jpg',
     },
   ],
 ];

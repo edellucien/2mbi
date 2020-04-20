@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import theme from '../../themes/2mbi-theme';
@@ -24,11 +23,9 @@ const Layout = ({ children }) => {
         <title>2mbi</title>
       </Head>
       <ThemeProvider theme={theme}>
-        <Typography color="textPrimary">
+        <Typography component="span" color="textPrimary">
           <Navbar isVerySmall={isVerySmall} />
-          <Container maxWidth="lg">
-            <div className={css.wrapper}>{children}</div>
-          </Container>
+          <div className={css.wrapper}>{children}</div>
           <Footer />
         </Typography>
       </ThemeProvider>

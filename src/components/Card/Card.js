@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { card, media, fullWidthMedia } from './Card.scss';
 
 const propTypes = {
   url: PropTypes.string.isRequired,
@@ -17,33 +17,12 @@ const propTypes = {
 const defaultProps = {
   fullWidth: false,
 };
-
-const useStyles = makeStyles(() => ({
-  card: {
-    width: '100%',
-    position: 'relative',
-    justifyContent: 'space-between',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    transition: 'box-shadow 0.5s ease',
-  },
-  media: {
-    height: 5,
-    paddingTop: '56.25%', // 16:9
-  },
-  fullWidthMedia: {
-    paddingTop: '15%',
-  },
-}));
-
 function DocCard({ url, title, imageUrl, fullWidth }) {
   const [isHovered, setIsHovered] = useState(false);
-  const classes = useStyles();
 
   return (
     <Card
-      className={classes.card}
+      className={card}
       style={{
         cursor: 'pointer',
         boxShadow: isHovered
@@ -61,7 +40,7 @@ function DocCard({ url, title, imageUrl, fullWidth }) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <CardMedia
-          className={fullWidth ? classes.fullWidthMedia : classes.media}
+          className={fullWidth ? fullWidthMedia : media}
           onClick={() => {
             Router.push(`/${url}`);
           }}
