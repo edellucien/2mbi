@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
         <title>2mbi</title>
       </Head>
       <ThemeProvider theme={theme}>
-        <Typography component="span" color="textPrimary">
+        <Typography component="div" color="textPrimary">
           <Navbar isVerySmall={isVerySmall} />
           <div className={css.wrapper}>{children}</div>
           <Footer />
@@ -33,8 +33,18 @@ const Layout = ({ children }) => {
         @import url('https://fonts.googleapis.com/css?family=Lato');
 
         body {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
           font-family: 'Lato', sans-serif;
           margin: 0;
+        }
+
+        #__next {
+          height: calc(100% - 60px);
+          position: relative;
         }
       `}</style>
     </div>

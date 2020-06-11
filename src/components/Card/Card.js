@@ -48,7 +48,7 @@ function DocCard({ url, title, imageUrl, fullWidth }) {
           title={title}
         />
         <CardContent>
-          <Typography variant="body2" color="textPrimary" component="p">
+          <Typography variant="body1" color="textPrimary" component="p">
             {title}
           </Typography>
         </CardContent>

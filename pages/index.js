@@ -14,18 +14,12 @@ const presentation = (
     <h2>2MBi, un savoir-faire à votre service</h2>
 
     <p>
-      <b>Maintenance, bobinage et réparation de moteurs industriels</b>
-    </p>
-    <p>
       Installée dans le Bas-Rhin, à BENFELD près de Strasbourg, la société 2MBi
       est spécialisée dans la maintenance, la réparation et le bobinage de
-      moteurs électriques. Moteurs, réducteurs, pompes, variateurs et
-      démarreurs, ventilation, pièces détachées...
+      moteurs électriques, ainsi que toutes opérations sur réducteurs, pompes,
+      variateurs, démarreurs, ventilation, etc.
     </p>
 
-    <p>
-      <b>Entretien et réparation en atelier & sur site</b>
-    </p>
     <p>
       La maintenance et la réparation se font sur site ou dans nos ateliers.
     </p>

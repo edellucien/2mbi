@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdLabel } from 'react-icons/md';
 import Layout from '../src/components/Layout';
 import PrestationLayout from '../src/components/PrestationLayout';
 
@@ -6,22 +7,65 @@ const moteursPage = () => (
   <Layout>
     <PrestationLayout page="moteurs">
       <p>
-        <b>Maintenance, bobinage et réparation de moteurs électriques</b>
+        <b>
+          La société 2MBI est spécialisée dans la maintenance, le bobinage et la
+          réparation de moteurs électriques
+        </b>
       </p>
+      <span>Nous intervenons sur une large gamme de moteurs:</span>
       <ul>
-        <li>moteurs à courant continu</li>
-        <li>moteurs à bagues</li>
-        <li>moteurs frein (continu triphasé)</li>
-        <li>moteurs triphasés</li>
-        <li>moteurs anti-déflagrants</li>
-        <li>moteurs multi-vitesses</li>
-        <li>moteurs de positionnement</li>
-        <li>moteurs extra-plats</li>
-        <li>moteurs à sécurité augmentée</li>
-        <li>moteurs monophasés</li>
-        <li>tambours moteurs</li>
-        <li>servomoteurs</li>
-        <li>moteurs vibreurs</li>
+        <li>
+          <MdLabel />
+          Moteurs à courant continu
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs à bagues
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs frein (continu triphasé)
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs triphasés
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs anti-déflagrants
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs multi-vitesses
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs de positionnement
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs extra-plats
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs à sécurité augmentée
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs monophasés
+        </li>
+        <li>
+          <MdLabel />
+          Tambours moteurs
+        </li>
+        <li>
+          <MdLabel />
+          Servomoteurs
+        </li>
+        <li>
+          <MdLabel />
+          Moteurs vibreurs
+        </li>
       </ul>
 
       <p>

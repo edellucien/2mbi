@@ -12,7 +12,9 @@
     "node-sass": "^4.13.1",
     "prop-types": "^15.6.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.10.0",
+    "react-iframe": "^1.8.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
