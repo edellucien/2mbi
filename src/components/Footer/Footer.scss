@@ -3,24 +3,19 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: #444;
+  font-size: 16px;
+  color: #767676;
+  position: relative;
+  padding: 18px 0;
+  border-top: 1px solid rgba(252,252,252,0.25);
 
-
-  .footerTop {
-    color: #fff;
+  .conception {
+    display: flex;
   }
 
-  .footerBottom {
-    font-size: 12px;
+  a {
     color: #767676;
-    position: relative;
-    padding: 18px 0;
-    border-top: 1px solid rgba(252,252,252,0.25);
-
-    a {
-      color: #767676;
-      text-decoration: none;
-    }
+    text-decoration: none;
   }
 }

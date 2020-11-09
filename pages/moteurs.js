@@ -12,6 +12,13 @@ const moteursPage = () => (
           réparation de moteurs électriques
         </b>
       </p>
+
+      Liste des taches:
+      bobinage en atelier,
+      remplacemnt de pieces, reparation
+      remplacement et vente: differente certifiation de moteurs
+      voir gamme en dessous (voir plus pour toggle tout les moteurs)
+
       <span>Nous intervenons sur une large gamme de moteurs:</span>
       <ul>
         <li>

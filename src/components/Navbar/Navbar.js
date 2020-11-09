@@ -15,13 +15,15 @@ const Navbar = ({ isVerySmall }) => (
   <div className={css.navbar}>
     <Container maxWidth="lg" className={css.container}>
       <div className={css.main}>
-        <img alt="logo" src={logo} />
-        <div className={css.title}>
-          <a href="/">2MBi</a>
-          {!isVerySmall ? (
-            <span>Maintenance Moteur Bobinage Industriel</span>
-          ) : null}
-        </div>
+        <a href="/" className={css.href}>
+          <img alt="logo" src={logo} />
+          <div className={css.title}>
+            <span>2MBi</span>
+            {!isVerySmall ? (
+              <span>Maintenance Moteur Bobinage Industriel</span>
+            ) : null}
+          </div>
+        </a>
       </div>
       <ul className="test">
         <li>
@@ -30,8 +32,8 @@ const Navbar = ({ isVerySmall }) => (
           </Link>
         </li>
         <li>
-          <Link href="/information">
-            <a>Informations</a>
+          <Link href="/contact">
+            <a>Contact</a>
           </Link>
         </li>
       </ul>

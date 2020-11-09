@@ -14,7 +14,7 @@ const PageHeader = ({ page }) => {
         style={{
           backgroundImage: isVerySmall
             ? ''
-            : 'linear-gradient(90deg, #ffffff 25%, #ffffff00 80%)',
+            : 'linear-gradient(90deg, #fafafa 25%, #ffffff00 80%)',
           width: '100%',
           height: '300px',
           position: 'absolute',
@@ -25,7 +25,7 @@ const PageHeader = ({ page }) => {
       />
       <div
         style={{
-          width: isVerySmall ? '100%' : '90%',
+          width: isVerySmall ? '100%' : '80%',
           height: isVerySmall ? '280px' : '300px',
           position: 'absolute',
           right: '0px',
@@ -48,7 +48,7 @@ const PageHeader = ({ page }) => {
         style={{
           backgroundImage: isVerySmall
             ? ''
-            : 'linear-gradient(-90deg, #ffffff 5%, #ffffff00 35%)',
+            : 'linear-gradient(-90deg, #fafafa 5%, #ffffff00 35%)',
           width: '100%',
           height: '300px',
           position: 'absolute',

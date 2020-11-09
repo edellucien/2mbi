@@ -9,18 +9,8 @@ const defaultTheme = createMuiTheme({
   },
   typography: {
     fontFamily: ['Lato', 'sans-serif'],
-    // color: '#444',
+    fontSize: 15,
   },
-  /*
-  palette: {
-    primary: {
-      main: '#117AFF',
-    },
-    secondary: {
-      main: '#117AFF',
-    },
-  },
-  */
 });
 
 export default defaultTheme;

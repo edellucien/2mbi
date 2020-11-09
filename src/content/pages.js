@@ -1,4 +1,12 @@
 export default {
+  contact: {
+    backgroundImage: '/static/images/worker.jpg',
+    title: 'Contact',
+  },
+  index: {
+    backgroundImage: '/static/images/motors.jpg',
+    title: '2MBi, un savoir-faire à votre service',
+  },
   moteurs: {
     backgroundImage: '/static/images/repair.jpg',
     title: 'Moteurs électriques',

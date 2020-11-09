@@ -1,9 +1,10 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
 import Layout from '../src/components/Layout';
 
 const Legals = () => (
   <Layout>
-    <div>
+    <Container maxWidth="lg">
       <h1>Mentions légales</h1>
 
       <h2>Editeur:</h2>
@@ -30,7 +31,7 @@ const Legals = () => (
 
       <h2>Hébergeur:</h2>
       <div>...</div>
-    </div>
+    </Container>
   </Layout>
 );
 
