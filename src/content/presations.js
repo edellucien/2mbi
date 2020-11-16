@@ -24,7 +24,7 @@ export default [
     },
     {
       url: 'electricite',
-      title: 'Electricités/automatismes/variateurs',
+      title: 'Electricités / automatismes / variateurs',
       imageUrl: '/../../static/images/elec.jpg',
     },
   ],
