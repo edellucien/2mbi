@@ -1,40 +1,48 @@
 import React from 'react';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles } from '@material-ui/core/styles';
 import Link from 'next/link';
 import Container from '@material-ui/core/Container';
-import theme from '../../themes/2mbi-theme';
-import css from './Footer.scss';
+
+const useStyles = makeStyles(theme => ({
+  footer: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    backgroundColor: theme.colors.primaryBlack,
+    fontSize: '16px',
+    color: '#767676',
+    position: 'relative',
+    padding: '18px 0',
+    borderTop: '1px solid rgba(252,252,252,0.25)',
+  },
+  footerContent: {
+    display: 'flex',
+    fontSize: '14px',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '12px',
+    },
+  },
+  legals: {
+    color: theme.colors.secondaryGray,
+    textDecoration: 'none',
+  },
+}));
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const Navbar = () => {
-  const isVerySmall = useMediaQuery(theme.breakpoints.down('xs'));
+  const classes = useStyles();
 
   return (
-    <div className={css.footer}>
-      <Container
-        maxWidth="lg"
-        className={isVerySmall ? css.footerContentSmall : css.footerContent}
-      >
+    <div className={classes.footer}>
+      <Container maxWidth="lg" className={classes.footerContent}>
         <span>© 2MBI, tous droits réservés | </span>
         <Link href="/legals">
-          <a>&nbsp;Mentions légales&nbsp;</a>
+          <a className={classes.legals}>&nbsp;Mentions légales&nbsp;</a>
         </Link>
-        |
-        <div>
-          &nbsp;
-          Conception du site internet :
-          &nbsp;
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/edellucien/2mbi"
-          >
-            Edel Lucien
-          </a>
-        </div>
       </Container>
     </div>
   );
-}
+};
 
 export default Navbar;

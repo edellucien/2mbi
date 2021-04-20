@@ -1,38 +1,100 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { IoLogoGithub } from 'react-icons/io';
+import { MdMood, MdEmail } from 'react-icons/md';
 import Layout from '../src/components/Layout';
+import ContactComp from '../src/components/Contact';
 
-const Legals = () => (
-  <Layout>
-    <Container maxWidth="lg">
-      <h1>Mentions légales</h1>
+const useStyles = makeStyles(() => ({
+  container: {
+    '& a': {
+      color: '#444',
+      textDecoration: 'none',
+    },
+  },
+  contactWrapper: {
+    display: 'flex',
+  },
+  infosWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: '10px',
+    '& p': {
+      marginBlockEnd: '0.5em',
+      marginBlockStart: '0.5em',
+    },
+  },
+  conceptionWrapper: {
+    '& p': {
+      display: 'flex',
+      alignItems: 'center',
+      marginBlockEnd: '0.5em',
+      marginBlockStart: '0.5em',
+      '& svg': {
+        height: '20px',
+        width: '20px',
+        paddingRight: '5px',
+      },
+    },
+  },
+}));
 
-      <h2>Editeur:</h2>
-      <div>2MBi</div>
-      <div>ZAC des Nations - 4, rue d&apos;Italie - 67230 BENFELD</div>
-      <div>tel : 03 88 74 10 90</div>
-      <div>fax : 03 90 57 65 95</div>
+const Legals = () => {
+  const classes = useStyles();
 
-      <h2>Conception:</h2>
-      <span>Edel Lucien</span>
-      <div>
-        contact: <a href="mailto:edellucien@gmail.com">edellucien@gmail.com</a>
-      </div>
-      <div>
-        github:{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/edellucien/2mbi"
-        >
-          https://github.com/edellucien/2mbi
-        </a>
-      </div>
-
-      <h2>Hébergeur:</h2>
-      <div>...</div>
-    </Container>
-  </Layout>
-);
+  return (
+    <Layout>
+      <Container maxWidth="lg" className={classes.container}>
+        <h1>Mentions légales</h1>
+        <h2>
+          <b>Site internet</b>
+        </h2>
+        <div>www.2mbi.fr</div>
+        <h2>
+          <b>Sarl 2MBI</b>
+        </h2>
+        <div className={classes.infosWrapper}>
+          <p>Sarl au capital de 12.000€</p>
+          <p>SIRET: 501 265 896 00024</p>
+          <p>TVA intercommunautaire: FR 07 501 265 896</p>
+          <p>Responsable de la publication: Philippe BRICOLA</p>
+        </div>
+        <div className={classes.contactWrapper}>
+          <ContactComp />
+        </div>
+        <h2>Conception</h2>
+        <div className={classes.conceptionWrapper}>
+          <p>
+            <MdMood />
+            Edel Lucien
+          </p>
+          <p>
+            <MdEmail />
+            e-mail:&nbsp;
+            <a href="mailto:edellucien@gmail.com">edellucien@gmail.com</a>
+          </p>
+          <p>
+            <IoLogoGithub />
+            github:&nbsp;
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/edellucien/2mbi"
+            >
+              https://github.com/edellucien/2mbi
+            </a>
+          </p>
+        </div>
+        <h2>Hébergeur</h2>
+        <div>
+          <b>OVH</b>
+          <p>2, rue Kellermann - 59100 Roubaix - France</p>
+          <p>SIRET: 424 761 419 00045</p>
+        </div>
+      </Container>
+    </Layout>
+  );
+};
 
 export default Legals;
