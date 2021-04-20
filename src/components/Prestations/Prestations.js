@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Card from '../Card';
 import theme from '../../themes/2mbi-theme';
-import prestationRows from '../../content/presations';
+import prestationRows from '../../content/prestations';
 
 import { root } from './Prestations.scss';
 

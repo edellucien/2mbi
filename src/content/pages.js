@@ -3,6 +3,10 @@ export default {
     backgroundImage: '/static/images/worker.jpg',
     title: 'Contact',
   },
+  joinus: {
+    backgroundImage: '/static/images/worker.jpg',
+    title: 'Rejoingez-nous',
+  },
   index: {
     backgroundImage: '/static/images/motors.jpg',
     title: '2MBi, un savoir-faire à votre service',

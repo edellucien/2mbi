@@ -1,30 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import { makeStyles } from '@material-ui/core/styles';
+import Router from 'next/router';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import { IoIosArrowUp } from 'react-icons/io';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import logo from './logo.png';
-
-const propTypes = {
-  isVerySmall: PropTypes.bool.isRequired,
-};
+import prestationRows from '../../content/prestations';
 
 const useStyles = makeStyles(theme => ({
   header: {
     color: theme.colors.secondaryText,
     background: theme.colors.white,
-    borderBottom: '1px solid #e5e5e5',
     position: 'fixed',
     top: 0,
     right: 0,
     left: 0,
     zIndex: 999,
+    height: '65px',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  headerCompany: {
+    color: theme.colors.primaryRed,
+    margin: 0,
+    height: '100%',
+  },
+  headerTitle: {
+    marginLeft: '35px',
+    fontSize: '18px',
+    color: theme.colors.secondaryGray,
+    opacity: 0.75,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '16px',
+    },
   },
   navbar: {
     color: theme.colors.secondaryText,
     background: theme.colors.secondaryLightGray,
-    borderBottom: '1px solid #e5e5e5',
+    borderBottomStyle: 'solid',
+    borderBottomWidth: '3px',
+    borderBottomColor: theme.colors.secondaryGray,
     position: 'fixed',
     top: 65,
     right: 0,
@@ -34,7 +56,19 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: 'row',
+    '& a': {
+      color: theme.colors.primaryRed,
+      textDecoration: 'none',
+    },
+    [theme.breakpoints.down('xs')]: {
+      margin: '0 25px',
+    },
+  },
+  navContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     '& a': {
       color: theme.colors.secondaryText,
       textDecoration: 'none',
@@ -44,57 +78,108 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       '& li': {
         fontSize: '18px',
-        marginRight: '20px',
+        [theme.breakpoints.down('xs')]: {
+          fontSize: '16px',
+        },
+      },
+      [theme.breakpoints.down('xs')]: {
+        padding: 0,
       },
     },
-  },
-  main: {
-    display: 'flex',
-    '& a': {
-      display: 'flex',
-
-      '& img': {
-        width: '90px',
-        height: '70px',
-        paddingRight: '10px',
-      },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '16px',
     },
   },
-  title: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
+  prestaTitle: {
+    marginRight: 10,
+    [theme.breakpoints.down('xs')]: {
+      marginRight: 5,
+    },
+  },
+  arrow: {
+    transition: 'transform .25s ease-in-out',
   },
   navBtn: {
+    marginRight: 35,
     '&:hover': {
       color: theme.colors.primaryRed,
     },
+    [theme.breakpoints.down('xs')]: {
+      marginRight: 5,
+    },
+  },
+  popover: {
+    top: '17px !important',
+  },
+  grow: {
+    backgroundColor: theme.colors.secondaryLightGray,
+  },
+  menuList: {
+    display: 'flex',
+    flexDirection: 'column',
+    borderTopWidth: '3px',
+    borderTopStyle: 'solid',
+    borderTopColor: theme.colors.primaryRed,
   },
 }));
 
+const buttonStyles = theme => ({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: '18px',
+    padding: 0,
+    backgroundColor: 'transparent',
+    color: theme.colors.secondaryText,
+    lineHeight: 1.5,
+    border: 'none',
+    '&:hover': {
+      backgroundColor: 'transparent',
+      borderColor: 'none',
+      boxShadow: 'none',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '16px',
+    },
+  },
+});
+
+const NavButton = withStyles(buttonStyles)(Button);
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
-const Navbar = ({ isVerySmall }) => {
+const Navbar = () => {
   const classes = useStyles();
+  const anchorRef = useRef(null);
+  const [prestaOpen, setPrestaOpen] = useState(false);
+
+  const handleToggle = () => {
+    setPrestaOpen(prevOpen => !prevOpen);
+  };
+
+  const handleClose = event => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setPrestaOpen(false);
+  };
 
   return (
     <>
       <div className={classes.header}>
         <Container maxWidth="lg" className={classes.container}>
-          <div className={classes.main}>
-            <a href="/">
-              <img alt="logo" src={logo} />
-              <div className={classes.title}>
-                <span>2MBi</span>
-                {!isVerySmall ? (
-                  <span>Maintenance Moteur Bobinage Industriel</span>
-                ) : null}
-              </div>
-            </a>
-          </div>
+          <a href="/">
+            <h1 className={classes.headerCompany}>2MBi</h1>
+          </a>
+          <b className={classes.headerTitle}>
+            Maintenance Moteur Bobinage Industriel
+          </b>
         </Container>
       </div>
       <div className={classes.navbar}>
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="lg" className={classes.navContainer}>
           <ul>
             <li>
               <Link href="/">
@@ -102,17 +187,75 @@ const Navbar = ({ isVerySmall }) => {
               </Link>
             </li>
             <li>
+              <NavButton
+                ref={anchorRef}
+                className={classes.navBtn}
+                // aria-controls={prestaOpen ? 'menu-list-grow' : undefined}
+                // aria-haspopup="true"
+                onClick={handleToggle}
+                disableRipple
+              >
+                <span className={classes.prestaTitle}>Prestations</span>
+                <IoIosArrowUp
+                  className={classes.arrow}
+                  style={{
+                    transform: prestaOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  }}
+                />
+              </NavButton>
+            </li>
+            <li>
               <Link href="/contact">
                 <a className={classes.navBtn}>Contact</a>
               </Link>
             </li>
+            <li>
+              <Link href="/joinus">
+                <a className={classes.navBtn}>Rejoignez-nous</a>
+              </Link>
+            </li>
           </ul>
+          <Popper
+            open={prestaOpen}
+            anchorEl={anchorRef.current}
+            role={undefined}
+            transition
+            disablePortal
+            className={classes.popover}
+          >
+            {({ TransitionProps }) => (
+              <Grow
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...TransitionProps}
+                className={classes.grow}
+              >
+                <Paper square>
+                  <ClickAwayListener onClickAway={handleClose}>
+                    <MenuList
+                      className={classes.menuList}
+                      autoFocusItem={prestaOpen}
+                      id="menu-list-grow"
+                      // onKeyDown={handleListKeyDown}
+                    >
+                      {prestationRows.flat().map(prest => (
+                        <MenuItem
+                          onClick={() => {
+                            Router.push(`/${prest.url}`);
+                          }}
+                        >
+                          {prest.title}
+                        </MenuItem>
+                      ))}
+                    </MenuList>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+            )}
+          </Popper>
         </Container>
       </div>
     </>
   );
 };
-
-Navbar.propTypes = propTypes;
 
 export default Navbar;

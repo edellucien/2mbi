@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Typography from '@material-ui/core/Typography';
 import { ThemeProvider } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import theme from '../../themes/2mbi-theme';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
@@ -15,8 +14,6 @@ const propTypes = {
 };
 
 const Layout = ({ children }) => {
-  const isVerySmall = useMediaQuery(theme.breakpoints.down('xs'));
-
   return (
     <div>
       <Head>
@@ -24,7 +21,7 @@ const Layout = ({ children }) => {
       </Head>
       <ThemeProvider theme={theme}>
         <Typography component="div" color="textPrimary">
-          <Navbar isVerySmall={isVerySmall} />
+          <Navbar />
           <div className={css.wrapper}>{children}</div>
           <Footer />
         </Typography>
