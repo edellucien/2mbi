@@ -8,6 +8,8 @@ import ContactComp from '../src/components/Contact';
 
 const useStyles = makeStyles(() => ({
   container: {
+    paddingTop: '20px',
+    paddingBottom: '20px',
     '& a': {
       color: '#444',
       textDecoration: 'none',
