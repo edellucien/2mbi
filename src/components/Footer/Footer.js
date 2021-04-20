@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '12px',
+      fontSize: '14px',
     },
   },
   linkedin: {
