@@ -85,6 +85,8 @@ const useStyles = makeStyles(theme => ({
       },
       [theme.breakpoints.down('xs')]: {
         padding: 0,
+        justifyContent: 'space-around',
+        width: '100%',
       },
     },
     [theme.breakpoints.down('xs')]: {
@@ -99,6 +101,11 @@ const useStyles = makeStyles(theme => ({
   },
   arrow: {
     transition: 'transform .25s ease-in-out',
+  },
+  prestaButton: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
   },
   navBtn: {
     marginRight: 35,
@@ -187,7 +194,7 @@ const Navbar = () => {
                 <a className={classes.navBtn}>Accueil</a>
               </Link>
             </li>
-            <li>
+            <li className={classes.prestaButton}>
               <NavButton
                 ref={anchorRef}
                 className={classes.navBtn}
