@@ -11,12 +11,22 @@ const propTypes = {
 };
 
 const useStyles = makeStyles(theme => ({
+  header: {
+    color: theme.colors.secondaryText,
+    background: theme.colors.white,
+    borderBottom: '1px solid #e5e5e5',
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    left: 0,
+    zIndex: 999,
+  },
   navbar: {
     color: theme.colors.secondaryText,
     background: theme.colors.secondaryLightGray,
     borderBottom: '1px solid #e5e5e5',
     position: 'fixed',
-    top: 0,
+    top: 65,
     right: 0,
     left: 0,
     zIndex: 999,
@@ -67,33 +77,39 @@ const Navbar = ({ isVerySmall }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.navbar}>
-      <Container maxWidth="lg" className={classes.container}>
-        <div className={classes.main}>
-          <a href="/">
-            <img alt="logo" src={logo} />
-            <div className={classes.title}>
-              <span>2MBi</span>
-              {!isVerySmall ? (
-                <span>Maintenance Moteur Bobinage Industriel</span>
-              ) : null}
-            </div>
-          </a>
-        </div>
-        <ul className="test">
-          <li>
-            <Link href="/">
-              <a className={classes.navBtn}>Accueil</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a className={classes.navBtn}>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </Container>
-    </div>
+    <>
+      <div className={classes.header}>
+        <Container maxWidth="lg" className={classes.container}>
+          <div className={classes.main}>
+            <a href="/">
+              <img alt="logo" src={logo} />
+              <div className={classes.title}>
+                <span>2MBi</span>
+                {!isVerySmall ? (
+                  <span>Maintenance Moteur Bobinage Industriel</span>
+                ) : null}
+              </div>
+            </a>
+          </div>
+        </Container>
+      </div>
+      <div className={classes.navbar}>
+        <Container maxWidth="lg" className={classes.container}>
+          <ul>
+            <li>
+              <Link href="/">
+                <a className={classes.navBtn}>Accueil</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a className={classes.navBtn}>Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </Container>
+      </div>
+    </>
   );
 };
 
