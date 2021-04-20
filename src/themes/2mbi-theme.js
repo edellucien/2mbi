@@ -6,6 +6,7 @@ export const colors = {
   secondaryText: '#6f6f6f',
   secondaryGray: '#767676',
   secondaryLightGray: '#e5e5e5',
+  whiteBackgroundTransparent: 'rgba(255, 255, 255, .9)',
   white: '#fff',
 };
 
