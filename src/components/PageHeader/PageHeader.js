@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import MUITheme from '../../themes/2mbi-theme';
 import pages from '../../content/pages';
 
 const propTypes = {
@@ -22,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     height: '450px',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-      height: '280px',
+      height: '320px',
     },
   },
   image: {
@@ -44,12 +46,28 @@ const useStyles = makeStyles(theme => ({
     '& h2': {
       margin: 0,
     },
+    '& h3': {
+      margin: 0,
+    },
+  },
+  titleDesktopWrapper: {
+    display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
+  titleMobileWrapper: {
+    display: 'none',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
 }));
 
 const PageHeader = ({ page }) => {
   const classes = useStyles();
-  const { info, backgroundImage } = pages[page];
+  const { info, mobileInfo, backgroundImage } = pages[page];
+  const isMobile = useMediaQuery(MUITheme.breakpoints.down('xs'));
 
   return (
     <Container maxWidth="lg" className={classes.container}>
@@ -57,10 +75,23 @@ const PageHeader = ({ page }) => {
         <div
           className={classes.image}
           style={{
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: `url(/static/images/headers/${
+              isMobile ? 'mobile/' : ''
+            }${backgroundImage})`,
           }}
         />
-        <div className={classes.titleWrapper}>{info}</div>
+        <div
+          className={`${classes.titleWrapper} ${classes.titleDesktopWrapper}`}
+        >
+          {info}
+        </div>
+        {mobileInfo ? (
+          <div
+            className={`${classes.titleWrapper} ${classes.titleMobileWrapper}`}
+          >
+            {mobileInfo}
+          </div>
+        ) : null}
       </div>
     </Container>
   );
