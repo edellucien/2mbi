@@ -53,15 +53,15 @@ const Contact = () => {
         </p>
         <p>
           <MdLocalPhone />
-          tel:&nbsp;<a href="tel:0388741090">03 88 74 10 90</a>
+          Tel:&nbsp;<a href="tel:0388741090">03 88 74 10 90</a>
         </p>
         <p>
           <MdSubject />
-          fax:&nbsp;03 90 57 65 95
+          Fax:&nbsp;03 90 57 65 95
         </p>
         <p>
           <MdEmail />
-          e-mail:&nbsp;<a href="mailto:2mbi@2mbi.fr">2mbi@2mbi.fr</a>
+          E-mail:&nbsp;<a href="mailto:2mbi@2mbi.fr">2mbi@2mbi.fr</a>
         </p>
       </div>
     </>
