@@ -42,7 +42,7 @@ function DocCard({ url, title, imageUrl, fullWidth }) {
         <CardMedia
           className={fullWidth ? fullWidthMedia : media}
           onClick={() => {
-            Router.push(`/${url}`);
+            Router.push(`/${url}`).then(() => window.scrollTo(0, 0));
           }}
           image={imageUrl}
           title={title}

@@ -191,8 +191,6 @@ const Navbar = () => {
               <NavButton
                 ref={anchorRef}
                 className={classes.navBtn}
-                // aria-controls={prestaOpen ? 'menu-list-grow' : undefined}
-                // aria-haspopup="true"
                 onClick={handleToggle}
                 disableRipple
               >
@@ -235,13 +233,13 @@ const Navbar = () => {
                     <MenuList
                       className={classes.menuList}
                       autoFocusItem={prestaOpen}
-                      id="menu-list-grow"
-                      // onKeyDown={handleListKeyDown}
                     >
                       {prestationRows.flat().map(prest => (
                         <MenuItem
                           onClick={() => {
-                            Router.push(`/${prest.url}`);
+                            Router.push(`/${prest.url}`).then(() =>
+                              window.scrollTo(0, 0),
+                            );
                           }}
                         >
                           {prest.title}
