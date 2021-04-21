@@ -2,27 +2,48 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Typography from '@material-ui/core/Typography';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from '../../themes/2mbi-theme';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import MUITheme from '../../themes/2mbi-theme';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
-import css from './Layout.scss';
+const useStyles = makeStyles(theme => ({
+  wrapper: {
+    marginTop: '120px',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '105px',
+    },
+    '& ul': {
+      paddingInlineStart: 0,
+      '& li': {
+        display: 'flex',
+        alignItems: 'center',
+        padding: '10px 0',
+        borderTop: '1px solid #ddd',
+        '& svg': {
+          paddingRight: '5px',
+        },
+      },
+    },
+  },
+}));
 
 const propTypes = {
   children: PropTypes.element.isRequired,
 };
 
 const Layout = ({ children }) => {
+  const classes = useStyles();
+
   return (
     <div>
       <Head>
         <title>2mbi</title>
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={MUITheme}>
         <Typography component="div" color="textPrimary">
           <Navbar />
-          <div className={css.wrapper}>{children}</div>
+          <div className={classes.wrapper}>{children}</div>
           <Footer />
         </Typography>
       </ThemeProvider>

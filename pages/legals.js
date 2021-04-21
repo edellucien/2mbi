@@ -6,7 +6,7 @@ import { MdMood, MdEmail } from 'react-icons/md';
 import Layout from '../src/components/Layout';
 import ContactComp from '../src/components/Contact';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   container: {
     paddingTop: '20px',
     paddingBottom: '20px',
@@ -17,6 +17,9 @@ const useStyles = makeStyles(() => ({
   },
   contactWrapper: {
     display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
   infosWrapper: {
     display: 'flex',

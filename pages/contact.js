@@ -27,6 +27,9 @@ const useStyles = makeStyles(theme => ({
         color: '#CA0B00',
       },
     },
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
 }));
 

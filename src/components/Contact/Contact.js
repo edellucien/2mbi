@@ -40,7 +40,7 @@ const Contact = () => {
       <div className={classes.contact}>
         <p>
           <IoIosBusiness />
-          <b>Accès à nos ateliers</b>
+          <b>Accès à notre atelier</b>
         </p>
         <p>ZAC des Nations</p>
         <p>4, rue d&apos;Italie</p>

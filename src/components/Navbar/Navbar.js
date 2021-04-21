@@ -38,7 +38,17 @@ const useStyles = makeStyles(theme => ({
     color: theme.colors.secondaryGray,
     opacity: 0.75,
     [theme.breakpoints.down('xs')]: {
-      fontSize: '16px',
+      display: 'none',
+    },
+  },
+  mobileHeaderTitle: {
+    flexDirection: 'column',
+    display: 'none',
+    fontSize: '15px',
+    color: theme.colors.secondaryGray,
+    opacity: 0.75,
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
     },
   },
   navbar: {
@@ -53,6 +63,9 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     zIndex: 999,
     height: '65px',
+    [theme.breakpoints.down('xs')]: {
+      height: '40px',
+    },
   },
   container: {
     display: 'flex',
@@ -63,7 +76,7 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
-      margin: '0 25px',
+      justifyContent: 'space-around',
     },
   },
   navContainer: {
@@ -84,9 +97,11 @@ const useStyles = makeStyles(theme => ({
         },
       },
       [theme.breakpoints.down('xs')]: {
-        padding: 0,
         justifyContent: 'space-around',
         width: '100%',
+        padding: '6px 0',
+        marginBlockStart: 0,
+        marginBlockEnd: 0,
       },
     },
     [theme.breakpoints.down('xs')]: {
@@ -184,6 +199,10 @@ const Navbar = () => {
           <b className={classes.headerTitle}>
             Maintenance Moteur Bobinage Industriel
           </b>
+          <div className={classes.mobileHeaderTitle}>
+            <b>Maintenance Moteur</b>
+            <b>Bobinage Industriel</b>
+          </div>
         </Container>
       </div>
       <div className={classes.navbar}>

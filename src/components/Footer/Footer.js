@@ -27,8 +27,23 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
+      justifyContent: 'space-around',
       fontSize: '14px',
     },
+  },
+  footerInfos: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  },
+  splitter: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
+  linkedinWrapper: {
+    height: '30px',
   },
   linkedin: {
     height: '30px',
@@ -45,14 +60,16 @@ const Navbar = () => {
       <Container maxWidth="lg" className={classes.footerContent}>
         <a
           href="https://www.linkedin.com/in/philippe-bricola-62ab0a155/"
+          className={classes.linkedinWrapper}
           title="Philippe Bricola"
           rel="noopener noreferrer"
           target="_blank"
         >
           <FaLinkedin className={classes.linkedin} />
         </a>
-        <div>
-          <span>© 2MBI, tous droits réservés | </span>
+        <div className={classes.footerInfos}>
+          <span>© 2MBI, tous droits réservés</span>
+          <span className={classes.splitter}> | </span>
           <Link href="/legals">
             <a>&nbsp;Mentions légales&nbsp;</a>
           </Link>

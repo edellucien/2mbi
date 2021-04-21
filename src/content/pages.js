@@ -22,12 +22,7 @@ export default {
         </span>
       </div>
     ),
-    mobileInfo: (
-      <div>
-        <h3>2MBi</h3>
-        <span>Un savoir-faire à votre service</span>
-      </div>
-    ),
+    mobileInfo: null,
   },
   moteurs: {
     backgroundImage: 'repair.jpg',
