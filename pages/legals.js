@@ -1,9 +1,11 @@
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { IoLogoGithub } from 'react-icons/io';
 import { MdMood, MdEmail } from 'react-icons/md';
 import Layout from '../src/components/Layout';
+import MUITheme from '../src/themes/2mbi-theme';
 import ContactComp from '../src/components/Contact';
 
 const useStyles = makeStyles(theme => ({
@@ -47,6 +49,7 @@ const useStyles = makeStyles(theme => ({
 
 const Legals = () => {
   const classes = useStyles();
+  const isMobile = useMediaQuery(MUITheme.breakpoints.down('xs'));
 
   return (
     <Layout>
@@ -79,17 +82,35 @@ const Legals = () => {
             e-mail:&nbsp;
             <a href="mailto:edellucien@gmail.com">edellucien@gmail.com</a>
           </p>
-          <p>
-            <IoLogoGithub />
-            github:&nbsp;
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/edellucien/2mbi"
-            >
-              https://github.com/edellucien/2mbi
-            </a>
-          </p>
+          {isMobile ? (
+            <>
+              <p>
+                <IoLogoGithub />
+                github:&nbsp;
+              </p>
+              <p>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/edellucien/2mbi"
+                >
+                  https://github.com/edellucien/2mbi
+                </a>
+              </p>
+            </>
+          ) : (
+            <p>
+              <IoLogoGithub />
+              github:&nbsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/edellucien/2mbi"
+              >
+                https://github.com/edellucien/2mbi
+              </a>
+            </p>
+          )}
         </div>
         <h2>Hébergeur</h2>
         <div>
