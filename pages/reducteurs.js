@@ -28,7 +28,7 @@ const reducteurs = () => {
         <p>
           <h3 className={classes.flex}>
             <MdBuild className={classes.icon} />
-            Maintenance et réparation de moto-réducteurs & réducteurs
+            Vente, maintenance et réparation de moto-réducteurs & réducteurs
           </h3>
         </p>
         <p>
