@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   },
   titleWrapper: {
     backgroundColor: theme.colors.whiteBackgroundTransparent,
-    color: theme.colors.primaryRed,
+    color: theme.colors.primaryBlack,
     position: 'absolute',
     top: '25px',
     right: 0,

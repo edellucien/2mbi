@@ -14,11 +14,7 @@ export default {
   index: {
     backgroundImage: 'motors.jpg',
     info: (
-      <div
-        style={{
-          color: '#444',
-        }}
-      >
+      <div>
         <h2>
           <span>2MBi, un savoir-faire à votre service</span>
         </h2>
