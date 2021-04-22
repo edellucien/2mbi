@@ -8,17 +8,25 @@ export default {
   },
   joinus: {
     backgroundImage: 'worker.jpg',
-    info: <h2>Rejoingez-nous</h2>,
-    mobileInfo: <h3>Rejoingez-nous</h3>,
+    info: <h2>Rejoignez-nous</h2>,
+    mobileInfo: <h3>Rejoignez-nous</h3>,
   },
   index: {
     backgroundImage: 'motors.jpg',
     info: (
-      <div>
-        <h2>2MBi, un savoir-faire à votre service</h2>
+      <div
+        style={{
+          color: '#444',
+        }}
+      >
+        <h2>
+          <span>2MBi, un savoir-faire à votre service</span>
+        </h2>
         <span>
-          l&apos;assurance d&apos;une prise en charge rapide et efficace de
-          toutes opérations de maintenance industrielles
+          <i>
+            L&apos;assurance d&apos;une prise en charge rapide et efficace de
+            toutes opérations de maintenance industrielles
+          </i>
         </span>
       </div>
     ),

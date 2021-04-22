@@ -6,7 +6,7 @@ const Joinus = () => {
   return (
     <Layout>
       <Container maxWidth="lg">
-        <h1>Rejoingez-nous</h1>
+        <h1>Rejoignez-nous</h1>
         <div>...description...</div>
       </Container>
     </Layout>
