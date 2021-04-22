@@ -29,6 +29,15 @@ const defaultTheme = createMuiTheme({
     fontFamily: ['Lato', 'sans-serif'],
     fontSize: 15,
   },
+  overrides: {
+    MuiCardContent: {
+      root: {
+        '&:last-child': {
+          paddingBottom: 16,
+        },
+      },
+    },
+  },
 });
 
 export default defaultTheme;

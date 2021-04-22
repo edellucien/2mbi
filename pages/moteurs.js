@@ -1,6 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { MdBuild, MdLabel, MdSchool, MdAccessTime } from 'react-icons/md';
+import {
+  MdBuild,
+  MdLabel,
+  MdSchool,
+  MdAccessTime,
+  MdShoppingCart,
+} from 'react-icons/md';
 import Layout from '../src/components/Layout';
 import PrestationLayout from '../src/components/PrestationLayout';
 
@@ -25,10 +31,22 @@ const useStyles = makeStyles(theme => ({
   sew: {
     display: 'flex',
     flexDirection: 'column',
+    paddingTop: '15px',
   },
   sewLogo: {
     width: '120px',
     height: '120px',
+  },
+  divers: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
+  diversMobile: {
+    display: 'none',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
 }));
 
@@ -106,6 +124,21 @@ const moteursPage = () => {
             Moteurs vibreurs
           </li>
         </ul>
+        <div className={classes.flex}>
+          <MdShoppingCart className={classes.icon} />
+          <span className={classes.divers}>
+            En plus de la vente de moteurs électriques, nous proposons de la
+            vente au detail de divers fournitures, tels que
+          </span>
+          <span className={classes.diversMobile}>
+            En plus de la vente de moteurs électriques, nous proposons de la
+            vente au detail de divers fournitures, tels que des condensateurs,
+            des roulements, poulies, courroies, etc.
+          </span>
+        </div>
+        <span className={classes.divers}>
+          des condensateurs, des roulements, poulies, courroies, etc.
+        </span>
         <div className={classes.sew}>
           La société 2MBi fait partie du réseau de partenaires SEW:
           <div className={`${classes.flex} ${classes.justified}`}>
