@@ -39,6 +39,10 @@ const Layout = ({ children }) => {
     <div>
       <Head>
         <title>2mbi</title>
+        <meta
+          name="keywords"
+          content="2mbi,moteurs,réducteurs,strasbourg,bas rhin,maintenance,bobinage,benfeld,réparation,moteurs industriels,bricola,philippe bricola,variateurs"
+        />
       </Head>
       <ThemeProvider theme={MUITheme}>
         <Typography component="div" color="textPrimary">

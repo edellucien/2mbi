@@ -7,7 +7,7 @@ export default [
     },
     {
       url: 'reducteurs',
-      title: 'Moto-réducteurs/réducteurs',
+      title: 'Moto-réducteurs / réducteurs',
       imageUrl: '/../../static/images/card/reductor.jpg',
     },
     {
